@@ -1,5 +1,5 @@
 package by.piskunou.solvdlaba.web.dto.groups;
 
-public interface onSearch {
+public interface OnSearch {
 
 }

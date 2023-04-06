@@ -34,7 +34,8 @@ public class AdviceController {
         List<ErrorResponseDTO> responses = new ArrayList<>();
         responses.addAll(e.getGlobalErrors()
                           .stream()
-                          .map(globalError -> new ErrorResponseDTO(globalError.getObjectName(), globalError.getDefaultMessage()))
+                          .map(globalError -> new ErrorResponseDTO(globalError.getObjectName(),
+                                                                   globalError.getDefaultMessage()))
                           .toList());
         responses.addAll(e.getFieldErrors()
                           .stream()

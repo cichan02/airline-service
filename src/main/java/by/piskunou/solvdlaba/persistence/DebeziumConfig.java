@@ -1,8 +1,8 @@
 package by.piskunou.solvdlaba.persistence;
 
+import io.debezium.config.Configuration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import io.debezium.config.Configuration;
 
 @org.springframework.context.annotation.Configuration
 public class DebeziumConfig {

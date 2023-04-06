@@ -25,10 +25,6 @@ spring:
   kafka:
     bootstrap-servers: ${MAIN_HOST}:9092
 
-  elasticsearch:
-    password:
-    username:
-
 server:
   port: 0
 

@@ -4,7 +4,7 @@ import by.piskunou.solvdlaba.domain.AirlineAggregate;
 import by.piskunou.solvdlaba.service.AirlineCommandService;
 import by.piskunou.solvdlaba.service.AirlineQueryService;
 import by.piskunou.solvdlaba.web.dto.AirlineDTO;
-import by.piskunou.solvdlaba.web.dto.groups.onCreate;
+import by.piskunou.solvdlaba.web.dto.groups.OnCreate;
 import by.piskunou.solvdlaba.web.mapper.AirlineMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -67,7 +67,7 @@ public class AirlineController {
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Create airline")
     @Parameter(name = "dto", description = "Created airline")
-    public void create(@RequestBody @Validated(onCreate.class) AirlineDTO dto) {
+    public void create(@RequestBody @Validated(OnCreate.class) AirlineDTO dto) {
         AirlineAggregate airline = mapper.toEntity(dto);
         commandService.create(airline);
     }
@@ -78,7 +78,7 @@ public class AirlineController {
             @Parameter(name = "id", description = "The airline's unique identification number"),
             @Parameter(name = "dto", description = "Updated airline")
     })
-    public void updateById(@PathVariable UUID id, @RequestBody @Validated(onCreate.class) AirlineDTO dto) {
+    public void updateById(@PathVariable UUID id, @RequestBody @Validated(OnCreate.class) AirlineDTO dto) {
         AirlineAggregate airline = mapper.toEntity(dto);
         commandService.updateById(id, airline);
     }
