@@ -26,9 +26,10 @@ public class AirlineQueryServiceImpl implements AirlineQueryService {
 	@Override
 	@Transactional(readOnly = true)
 	public AirlineAggregate findById(UUID id) {
+		String errorMessage = "There's no airline with such id";
 		return repository.findById(id)
 				.orElseThrow(() ->
-						new ResourceNotExistsException("There's no airline with such id")
+						new ResourceNotExistsException(errorMessage)
 				);
 	}
 
