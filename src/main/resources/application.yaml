@@ -4,6 +4,23 @@ spring:
   config:
     import: optional:.env[.properties]
 
+  #Configuration data sources
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    hikari:
+      data-source-properties:
+        stringtype: unspecified
+
+
+  #Liquibase
+  liquibase:
+    enabled: true
+    change-log: classpath:db.changelog/db.changelog-master.yaml
+    default-schema: ${LIQUIBASE_SCHEMA}
+
   #Kafka
   kafka:
     bootstrap-servers: ${MAIN_HOST}:9092
