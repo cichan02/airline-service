@@ -2,7 +2,7 @@ spring:
   application:
     name: airline-service
   config:
-    import: optional:.env[.properties]
+    import: optional:docker.env[.properties]
 
   #Configuration data sources
   datasource:
@@ -14,7 +14,6 @@ spring:
       data-source-properties:
         stringtype: unspecified
 
-
   #Liquibase
   liquibase:
     enabled: true
@@ -23,16 +22,16 @@ spring:
 
   #Kafka
   kafka:
-    bootstrap-servers: ${MAIN_HOST}:9092
+    bootstrap-servers: ${KAFKA_HOST}:9092
 
 server:
   port: 0
 
 eureka:
   client:
-    service-host: ${MAIN_HOST}
+    service-host: ${EUREKA_HOST}
     service-url:
       defaultZone: http://${eureka.client.service-host}:8761/eureka/
   instance:
     instance-id: ${spring.application.name}:${random.value}
-    hostname: ${MAIN_HOST}
+    hostname: ${EUREKA_HOST}
