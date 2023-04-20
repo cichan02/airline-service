@@ -13,6 +13,8 @@ spring:
     hikari:
       data-source-properties:
         stringtype: unspecified
+  jpa:
+    open-in-view: true
 
   #Liquibase
   liquibase:
