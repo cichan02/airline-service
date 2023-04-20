@@ -37,6 +37,7 @@
         <jetbrains.annotations.version>24.0.1</jetbrains.annotations.version>
         <mapstruct.version>1.5.3.Final</mapstruct.version>
         <spring.doc.version>2.1.0</spring.doc.version>
+        <caffeine.version>3.1.6</caffeine.version>
 
         <spring-cloud.dependencies.version>2022.0.2</spring-cloud.dependencies.version>
 
@@ -191,6 +192,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
             <version>${spring-boot.version}</version>
+        </dependency>
+
+        <!--  Cache -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>${caffeine.version}</version>
         </dependency>
     </dependencies>
 
