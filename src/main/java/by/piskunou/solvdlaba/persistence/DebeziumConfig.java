@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Bean;
 @org.springframework.context.annotation.Configuration
 public class DebeziumConfig {
 
-	@Value("${MAIN_HOST}")
+	@Value("${POSTGRES_HOST}")
 	private String customerDbHost;
 
-	@Value("${POSTGRES_POST}")
+	@Value("${POSTGRES_PORT}")
 	private String customerDbPort;
 
 	@Value("${spring.datasource.username}")
