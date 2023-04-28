@@ -20,7 +20,7 @@ spring:
   liquibase:
     enabled: true
     change-log: classpath:db.changelog/db.changelog-master.yaml
-    default-schema: ${LIQUIBASE_SCHEMA}
+    default-schema: ${LIQUIBASE_LIQUIBASE_SCHEMA_NAME}
 
   #Kafka
   kafka:
